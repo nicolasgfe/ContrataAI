@@ -1,0 +1,8 @@
+const express = require("express");
+const curriculoController = require("../constrollers/curriculoController");
+const router = express.Router();
+
+router.route("/").get(curriculoController.all).post(curriculoController.create);
+router.route("/:id").get(curriculoController.one).put(curriculoController.update).delete(curriculoController.delete);
+
+module.exports = router;
