@@ -20,26 +20,25 @@ const Curriculo = database.define('curriculo', {
         allowNull: false
     },
     dataNascimento: {
-        type: Sequelize.DATEONLY,
-        allowNull: false
+        type: Sequelize.DATEONLY
     },
     genero: { 
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
     },
     grauEscolaridade: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
     },
     nacionalidade: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
     },
     descricaoPessoal: {
         type: Sequelize.STRING(500)
     },
     descricaoProfissional: {
         type: Sequelize.STRING(500)
+    },
+    curriculo: {
+        type: Sequelize.STRING
     },
 });
 

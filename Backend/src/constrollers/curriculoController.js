@@ -1,4 +1,7 @@
 const Curriculo = require("../models/curriculoModel");
+const multer = require("multer");
+const upload = multer({dest: "upload/"});
+
 
 module.exports = {
     async all(request, response){
@@ -31,6 +34,14 @@ module.exports = {
             response.status(400).send(error);
         }
     },
+    async createAnexo(request, response) {
+        try {
+            await Curriculo.create(request.body);
+             response.status(200).json("Curriculo Anexado!");
+        } catch {
+            response.status(400).send(error);
+        }
+    }, 
     async update(request, response) {
         try {
             const { nome, email, telefone, dataNascimento, genero, grauEscolaridade, nacionalidade, descricaoPessoal, descricaoProfissional } = request.body;

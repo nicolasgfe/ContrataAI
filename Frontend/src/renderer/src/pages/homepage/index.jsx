@@ -10,9 +10,9 @@ function HomePage() {
       <br /><br /><br /><br />
       <div className="home-page">
         <center>
-          <Link to="/cadastro/curriculo"><button>Cadastrar Currículo</button></Link>
+          <Link to="/curriculo/cadastro"><button>Cadastrar Currículo</button></Link>
           <br />
-          <button>Anexar Currículo</button>
+          <Link to="/curriculo/anexo"><button>Anexar Currículo</button></Link>
         </center>
       </div>
     </>
