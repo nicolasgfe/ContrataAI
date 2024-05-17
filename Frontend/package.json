@@ -40,7 +40,7 @@
   },
 
   "build": {
-    "appId": "com.electron.app.frontend",
+    "appId": "com.electron.app.frontend" ,
     "linux": {
       "target": [
         "AppImage",
