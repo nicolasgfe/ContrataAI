@@ -98,7 +98,7 @@ class CriaCurriculo extends Component {
                                     value={this.state.curriculo.genero}
                                     onChange={this.handleInputChange}
                                 >
-                                    <option value=""></option>
+                                    <option value="">Selecione</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
                                     <option value="Outro">Outro</option>
@@ -113,7 +113,7 @@ class CriaCurriculo extends Component {
                                     value={this.state.curriculo.grauEscolaridade}
                                     onChange={this.handleInputChange}
                                 >
-                                    <option value=""></option>
+                                    <option value="">Selecione</option>
                                     <option value="Ensino Fundamental">Ensino Fundamental</option>
                                     <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
                                     <option value="Ensino Médio">Ensino Médio</option>
@@ -153,6 +153,7 @@ class CriaCurriculo extends Component {
                                 <textarea
                                     name="descricaoPessoal"
                                     id="descricaoPessoal"
+                                    placeholder='Uma breve apresentação sua'
                                     required
                                     value={this.state.curriculo.descricaoPessoal}
                                     onChange={this.handleInputChange}
@@ -165,6 +166,7 @@ class CriaCurriculo extends Component {
                                 <textarea
                                     name="descricaoProfissional"
                                     id="descricaoProfissional"
+                                    placeholder='Experiências, habilidades...'
                                     required
                                     value={this.state.curriculo.descricaoProfissional}
                                     onChange={this.handleInputChange}

@@ -27,7 +27,7 @@ button {
     font-weight: bold;
     background-color: purple;
     border: 1px solid purple;
-    border-radius: 50px;
+    border-radius: 5px;
     cursor: pointer;
     color: white;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
