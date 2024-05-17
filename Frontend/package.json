@@ -40,7 +40,7 @@
   },
 
   "build": {
-    "appId": "ContrataAI",
+    "appId": "com.electron.app.frontend",
     "linux": {
       "target": [
         "AppImage",
