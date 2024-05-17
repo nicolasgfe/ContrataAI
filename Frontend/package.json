@@ -47,6 +47,9 @@
         "deb"
       ]
     },
+    "win": {
+      "icon": "./resources/icon.ico"
+    },
     "publish": [
       {
         "provider": "github"
