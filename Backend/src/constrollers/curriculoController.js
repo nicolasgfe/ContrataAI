@@ -28,6 +28,7 @@ module.exports = {
     },
     async create(request, response) {
         try {
+            request.body.curriculo
             await Curriculo.create(request.body);
              response.status(200).json("Curriculo cadastrado!");
         } catch {
@@ -36,7 +37,20 @@ module.exports = {
     },
     async createAnexo(request, response) {
         try {
-            await Curriculo.create(request.body);
+
+            const { nome, email, telefone } = request.body;
+
+            const file = request.file;
+
+            const curriculo = new Curriculo({
+                nome,
+                email,
+                telefone,
+                curriculo: file.filename,
+            });
+
+            await curriculo.save();
+
              response.status(200).json("Curriculo Anexado!");
         } catch {
             response.status(400).send(error);
