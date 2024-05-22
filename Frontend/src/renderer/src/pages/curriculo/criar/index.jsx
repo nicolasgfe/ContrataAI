@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import './index.css';
 
 class CriaCurriculo extends Component {
@@ -27,7 +27,7 @@ class CriaCurriculo extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Navigate to="/" />;
+            return <Navigate to="/curriculo/concluido" />;
         } else {
             return (
 
@@ -35,7 +35,13 @@ class CriaCurriculo extends Component {
 
                     <h1 id='titulo'>Cadastro de Currículo</h1>
                     <p id='subtitulo'>Preencha suas informações</p>
-                    <br /><br /><br />
+                    <br />
+                    
+                    <div className='voltar'>
+                        <Link to="/"><input type="button" value="Menu" /></Link>
+                    </div>
+                    
+                    <br />
 
                     <form onSubmit={this.handleSubmit}>
                         <fieldset className='form'>

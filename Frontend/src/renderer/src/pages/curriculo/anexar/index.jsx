@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.css';
 
 function AnexaCurriculo() {
@@ -24,15 +24,22 @@ function AnexaCurriculo() {
             method: "POST",
             body: formData
         })
-           
-        navigate('/');
+
+        navigate('/curriculo/concluido');
     }
 
     return (
         <div>
+
             <h1 id='titulo'>Anexar Currículo</h1>
             <p id='subtitulo'>Preencha suas informações e anexe seu currículo em formato PDF</p>
-            <br /><br /><br />
+            <br />
+
+            <div className='voltar'>
+                <Link to="/"><input type="button" value="Menu" /></Link>
+            </div>
+
+            <br />
 
             <form onSubmit={handleSubmit} encType='multipart/form-data'>
                 <fieldset className='form'>
@@ -74,6 +81,7 @@ function AnexaCurriculo() {
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
                         />
+
                         <br />
                         <label htmlFor='curriculo'>Currículo</label>
                         <br />
@@ -85,7 +93,6 @@ function AnexaCurriculo() {
                             required
                             onChange={(e) => setArquivo(e.target.files[0])}
                         />
-
                     </div>
 
                     <div className='submit'>

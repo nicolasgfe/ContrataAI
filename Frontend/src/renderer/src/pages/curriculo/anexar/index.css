@@ -4,13 +4,14 @@ fieldset {
 
 #titulo {
     font-family: sans-serif;
+    font-weight: bold;
     color: #380B61;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
-} 
+}
 
 #subtitulo {
     font-family: sans-serif;
@@ -20,26 +21,47 @@ fieldset {
     align-items: center;
     margin: 0;
     padding: 0;
-} 
+}
 
 form {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-body{
+body {
     background-color: #F0F8FF;
     font-family: sans-serif;
     font-size: 1em;
     color: #59429d;
 }
 
+.voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltar input[type="button"] {
+    padding: 5px 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
 .curriculo-insert input {
     background: white;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -53,7 +75,7 @@ body{
     background: white;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -67,7 +89,7 @@ body{
     background: white;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -108,6 +130,18 @@ body{
     padding: 0;
 }
 
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    font-size: 13px;
+    border: none;
+    background: purple;
+    padding: 3px 7px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
 input[type="submit"] {
     padding: 10px 30px;
     font-size: 15px;
@@ -118,8 +152,8 @@ input[type="submit"] {
     border-radius: 50px;
     cursor: pointer;
     color: white;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
 }
 

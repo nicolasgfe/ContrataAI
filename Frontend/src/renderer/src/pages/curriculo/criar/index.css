@@ -4,6 +4,7 @@ fieldset {
 
 #titulo {
     font-family: sans-serif;
+    font-weight: bold;
     color: #380B61;
     display: flex;
     justify-content: center;
@@ -34,6 +35,28 @@ body{
     font-size: 1em;
     color: #59429d;
 }
+
+.voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltar input[type= "button"] {
+    padding: 5px 15px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: purple;
+    border: 1px solid purple;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    transition: 0.5s;
+}
+
 
 .curriculo-insert input {
     background: white;
