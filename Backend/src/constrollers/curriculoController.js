@@ -58,7 +58,18 @@ module.exports = {
     }, 
     async update(request, response) {
         try {
-            const { nome, email, telefone, dataNascimento, genero, grauEscolaridade, nacionalidade, descricaoPessoal, descricaoProfissional } = request.body;
+            const { nome, 
+                    email, 
+                    telefone, 
+                    dataNascimento, 
+                    cidade, 
+                    uf,
+                    estadoCivil,
+                    genero, 
+                    grauEscolaridade,
+                    nacionalidade, 
+                    descricaoPessoal, 
+                    descricaoProfissional } = request.body;
             const id = request.params.id;
 
             const curriculo = await Curriculo.findOne({where:{id}});
@@ -71,6 +82,9 @@ module.exports = {
             curriculo.email = email;
             curriculo.telefone = telefone;
             curriculo.dataNascimento = dataNascimento;
+            curriculo.cidade = cidade;
+            curriculo.uf = uf;
+            curriculo.estadoCivil = estadoCivil;
             curriculo.genero = genero;
             curriculo.grauEscolaridade = grauEscolaridade;
             curriculo.nacionalidade = nacionalidade;

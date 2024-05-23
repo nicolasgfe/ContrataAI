@@ -22,6 +22,15 @@ const Curriculo = database.define('curriculo', {
     dataNascimento: {
         type: Sequelize.DATEONLY
     },
+    cidade: { 
+        type: Sequelize.STRING
+    },
+    uf: { 
+        type: Sequelize.STRING
+    },
+    estadoCivil: { 
+        type: Sequelize.STRING
+    },
     genero: { 
         type: Sequelize.STRING
     },

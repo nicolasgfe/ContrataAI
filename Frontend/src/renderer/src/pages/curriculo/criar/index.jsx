@@ -12,6 +12,9 @@ class CriaCurriculo extends Component {
                 email: "",
                 telefone: "",
                 dataNascimento: "",
+                cidade: "",
+                uf: "",
+                estadoCivil: "",
                 genero: "",
                 grauEscolaridade: "",
                 nacionalidade: "",
@@ -78,6 +81,7 @@ class CriaCurriculo extends Component {
                                     id='telefone'
                                     name='telefone'
                                     maxLength={11}
+                                    minLength={11}
                                     placeholder='(  )_____-____'
                                     required
                                     value={this.state.curriculo.telefone}
@@ -94,6 +98,43 @@ class CriaCurriculo extends Component {
                                     value={this.state.curriculo.dataNascimento}
                                     onChange={this.handleInputChange}
                                 />
+                                 <br />
+                                <label id='labelCidade'htmlFor='cidade'>Cidade</label>
+                                <label htmlFor='uf'>UF</label>
+                                <br />
+                                <input
+                                    type='text'
+                                    id='cidade'
+                                    name='cidade'
+                                    placeholder='Digite sua cidade'
+                                    required
+                                    value={this.state.curriculo.cidade}
+                                    onChange={this.handleInputChange}
+                                />
+                                <input 
+                                    type='text'
+                                    id='uf'
+                                    name='uf'
+                                    required
+                                    value={this.state.curriculo.uf}
+                                    onChange={this.handleInputChange} 
+                                />
+                                <br />
+                                <label htmlFor='estadoCivil'>Estado Civil</label>
+                                <br />
+                                <select
+                                    id='estadoCivil'
+                                    name='estadoCivil'
+                                    required
+                                    value={this.state.curriculo.estadoCivil}
+                                    onChange={this.handleInputChange}
+                                >
+                                    <option value="">Selecione</option>
+                                    <option value="Solteiro(a)">Solteiro(a)</option>
+                                    <option value="Casado(a)">Casado(a)</option>
+                                    <option value="Divorciado(a)">Divorciado(a)</option>
+                                    <option vlaue="Viúvo(a)">Viúvo(a)</option>
+                                </select>
                                 <br />
                                 <label htmlFor='genero'>Gênero</label>
                                 <br />
