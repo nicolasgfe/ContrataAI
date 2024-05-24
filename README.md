@@ -10,19 +10,42 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
 
-Diga como essa etapa será:
+Após realizar o clone do reposótorio abra o terminal e entre na pasta Backend:
 
 ```
-Dar exemplos
+cd Backend
 ```
 
-E repita:
+E instale as depensdências:
 
 ```
-Até finalizar
+npm install
 ```
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+Em seguida inicialize as tarefas:
+
+```
+npm run dev
+```
+
+Em um novo terminal repetimos o processo para a pasta Frontend:
+
+```
+cd Frontend
+```
+
+instalação das depensdências:
+
+```
+npm install
+```
+
+E por fim a inicialização da interface:
+
+```
+npm run dev
+```
+
 
 ## 🛠️ Construído com
 
@@ -35,7 +58,7 @@ Termine com um exemplo de como obter dados do sistema ou como usá-los para uma 
 Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * **Alysson Antonietti** - *Desenvolvedor* - [Alysson Antonietti](https://github.com/AlyssonAntonietti)
-* **Emanuel Gomes Petry** - *Auxiliar* - [Emanuel Gomes Petry](https://github.com/linkParaPerfil)
+* **Emanuel Gomes Petry** - *Auxiliar* - [Emanuel Gomes Petry](https://github.com/ManinhoPetry)
 
 ## 🎁 Expressões de gratidão
 
