@@ -8,8 +8,6 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
 Após realizar o clone do reposótorio abra o terminal e entre na pasta Backend:
 
 ```
@@ -49,13 +47,13 @@ npm run dev
 
 ## 🛠️ Construído com
 
-* [Electron-vite](https://electron-vite.org/) - O framework usado
+* [Electron-vite](https://electron-vite.org/) - Framework
 * [Node.js](https://nodejs.org/en) - API
 * [Sequelize + SQLite](https://sequelize.org/) - Banco de dados
+* [Multer](https://www.npmjs.com/package/multer) - Upload de arquivos
+* [Electron-builder](https://www.electron.build/index.html) - Build
 
 ## ✒️ Autores
-
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
 
 * **Alysson Antonietti** - *Desenvolvedor* - [Alysson Antonietti](https://github.com/AlyssonAntonietti)
 * **Emanuel Gomes Petry** - *Auxiliar* - [Emanuel Gomes Petry](https://github.com/ManinhoPetry)
