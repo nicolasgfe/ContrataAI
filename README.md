@@ -1,6 +1,6 @@
 # ContrataAÍ
 
-O ContrataAÍ é uma solução para os setores de RH, trata-se de Onboarding de currículo, possuindo a alternativa de preenchimento de formulário ou anexo de currículo.
+O ContrataAÍ é uma solução para os setores de RH, trata-se de Onboarding de currículo, possuindo a alternativa de preenchimento de formulário ou anexo de currículo em formato PDF.
 
 ## 🚀 Começando
 
