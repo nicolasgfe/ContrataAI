@@ -1,5 +1,5 @@
 import Header from '../src/components/header/header';
-import AppRoutes from "./routes";
+import AppRoutes from "../src/routes";
 
 function App() {
   return (
