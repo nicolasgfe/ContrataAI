@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "contrata-ai",
   "version": "1.0.0",
   "description": "ContrataAI - Currículos online",
   "main": "./out/main/index.js",
