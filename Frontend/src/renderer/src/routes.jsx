@@ -9,8 +9,7 @@ import Concluido from "./pages/concluido/index";
 const AppRoutes = () => (
         <BrowserRouter>
             <Routes>
-                <Route />
-                <Route path="/" index element={<HomePage />} ></Route>
+                <Route path="/" element={<HomePage />} ></Route>
                 <Route path="/curriculo/cadastro" element={<CriaCurriculo />}> </Route>
                 <Route path="/curriculo/anexo" element={<AnexaCurriculo />}> </Route>
                 <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
