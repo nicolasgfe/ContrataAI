@@ -58,5 +58,5 @@ jobs:
             dist/*.rpm
             dist/*.tar.gz
             dist/*.yml
-            dist/*.blockmap 
+            dist/*.blockmap
         
