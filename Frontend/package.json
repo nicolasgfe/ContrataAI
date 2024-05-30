@@ -49,7 +49,8 @@
       "target": [
         "AppImage",
         "deb"
-      ]
+      ],
+      "category": "Utility"
     },
     "win": {
       "icon": "./resources/icon.ico"

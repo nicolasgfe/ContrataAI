@@ -15,6 +15,6 @@ const AppRoutes = () => (
                 <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
             </Routes>
         </BrowserRouter>
-);
+)
 
-export default AppRoutes
+export default AppRoutes;
