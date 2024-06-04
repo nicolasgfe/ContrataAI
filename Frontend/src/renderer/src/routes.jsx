@@ -14,7 +14,7 @@ const AppRoutes = () => (
                 <Route path="/curriculo/anexo" element={<AnexaCurriculo />}> </Route>
                 <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
             </Routes>
-        </HashRouter>
+        </HashRouter> 
 )
 
 export default AppRoutes;
