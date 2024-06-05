@@ -249,7 +249,7 @@ class CriaCurriculo extends Component {
     }
 
     handleSubmit = event => {
-        fetch(URL + "/api/curriculos", {
+        fetch("https://contrataai.onrender.com/api/curriculos", {
             method: "post",
             body: JSON.stringify(this.state.curriculo),
             headers: {
