@@ -38,7 +38,7 @@ function createWindow() {
   }
 
   Menu.setApplicationMenu(null)
-  mainWindow.openDevTools()
+  // mainWindow.openDevTools()
 }
 
 // This method will be called when Electron has finished

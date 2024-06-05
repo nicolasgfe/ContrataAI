@@ -44,7 +44,13 @@
     "vite": "^5.0.12"
   },
   "build": {
-    "appId": "com.electron.app.frontend",
+    "appId": "com.electron.app.contraai",
+    "productName": "ContrataAI",
+    "target": "NSIS",
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    },
     "linux": {
       "target": [
         "AppImage",

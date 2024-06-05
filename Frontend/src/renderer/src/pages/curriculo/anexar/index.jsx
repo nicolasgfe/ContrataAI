@@ -22,7 +22,7 @@ function AnexaCurriculo() {
         formData.append('file', file);
 
 
-        await fetch( URL + "/curriculos/anexo", {
+        await fetch( URL + "/api/curriculos/anexo", {
             method: "POST",
             body: formData
         })
