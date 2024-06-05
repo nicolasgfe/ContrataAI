@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import './index.css';
 
+const URL = "https://contrataai.onrender.com";
+
 class CriaCurriculo extends Component {
     constructor(props) {
         super(props);
@@ -247,7 +249,7 @@ class CriaCurriculo extends Component {
     }
 
     handleSubmit = event => {
-        fetch("http://localhost:3333/api/curriculos", {
+        fetch(URL + "/api/curriculos", {
             method: "post",
             body: JSON.stringify(this.state.curriculo),
             headers: {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './index.css';
 
+const URL = "https://contrataai.onrender.com";
+
 function AnexaCurriculo() {
 
     const [nome, setNome] = useState('');
@@ -20,7 +22,7 @@ function AnexaCurriculo() {
         formData.append('file', file);
 
 
-        await fetch("http://localhost:3333/api/curriculos/anexo", {
+        await fetch( URL + "/curriculos/anexo", {
             method: "POST",
             body: formData
         })
