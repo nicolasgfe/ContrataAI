@@ -268,4 +268,4 @@ class CriaCurriculo extends Component {
     
 }
 
-export default CriaCurriculo;
+export default CriaCurriculo; 
