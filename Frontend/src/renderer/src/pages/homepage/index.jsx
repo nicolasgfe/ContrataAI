@@ -13,10 +13,12 @@ function HomePage() {
           <Link to="/curriculo/cadastro"><button>Cadastrar Currículo</button></Link>
           <br />
           <Link to="/curriculo/anexo"><button>Anexar Currículo</button></Link>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <Link to="/cliente">Area do Cliente</Link>
         </center>
       </div>
     </>
   );
 }
 
-export default HomePage
+export default HomePage;

@@ -5,6 +5,7 @@ import HomePage from "./pages/homepage/index";
 import CriaCurriculo from "./pages/curriculo/criar/index";
 import AnexaCurriculo from "./pages/curriculo/anexar/index";
 import Concluido from "./pages/concluido/index";
+import AreadoCliente from "./pages/cliente/index";
 
 const AppRoutes = () => (
         <HashRouter>
@@ -13,6 +14,7 @@ const AppRoutes = () => (
                 <Route path="/curriculo/cadastro" element={<CriaCurriculo />}> </Route>
                 <Route path="/curriculo/anexo" element={<AnexaCurriculo />}> </Route>
                 <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
+                <Route path="/cliente" element={<AreadoCliente />}> </Route>
             </Routes>
         </HashRouter> 
 )
