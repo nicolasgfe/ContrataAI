@@ -13,6 +13,10 @@ app.use(express.json());
 
 app.use("/api/curriculos", Routes);
 
+app.get("/", (req, res) => {
+    res.send("ContrataAI-API");
+  });
+
 app.listen(3333, () => {
     console.log("Server up in port 3333");
 });
