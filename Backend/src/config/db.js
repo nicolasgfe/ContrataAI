@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('contrataai', 'contrataai', 'D4AsqceBWOUZQi3iFfXEnZAXwv6DKjf7', {
-  host: 'dpg-cph4mj821fec73ea4090-a.oregon-postgres.render.com',
+  host: 'dpg-cph4mj821fec73ea4090-a', //Host URL interna Render
+  // host: 'dpg-cph4mj821fec73ea4090-a.oregon-postgres.render.com',   //Host URL externa
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
