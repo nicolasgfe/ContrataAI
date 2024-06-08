@@ -43,13 +43,25 @@ E por fim a inicialização da interface:
 ```
 npm run dev
 ```
+### ⚙️ Build
 
+```bash
+# Para windows
+$ npm run build:win
+
+# Para macOS
+$ npm run build:mac
+
+# Para Linux
+$ npm run build:linux
+```
 
 ## 🛠️ Construído com
 
 * [Electron-vite](https://electron-vite.org/) - Framework
 * [Node.js](https://nodejs.org/en) - API
-* [Sequelize + SQLite](https://sequelize.org/) - Banco de dados
+* [Render](https://render.com/) - Hospedagen de API e Banco de dados
+* [Sequelize + PostgreSQL](https://sequelize.org/) - Banco de dados
 * [Multer](https://www.npmjs.com/package/multer) - Upload de arquivos
 * [Electron-builder](https://www.electron.build/index.html) - Build
 
