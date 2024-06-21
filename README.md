@@ -32,7 +32,7 @@ Em um novo terminal repetimos o processo para a pasta Frontend:
 cd Frontend
 ```
 
-instalação das depensdências:
+instalação das dependências:
 
 ```
 npm install
