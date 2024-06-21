@@ -14,7 +14,7 @@ Após realizar o clone do reposótorio abra o terminal e entre na pasta Backend:
 cd Backend
 ```
 
-E instale as depensdências:
+E instale as dependências:
 
 ```
 npm install
