@@ -30,6 +30,14 @@ function AnexaCurriculo() {
         navigate('/curriculo/concluido');
     }
 
+    const formataTelefone = () => {
+        const temp = telefone;
+
+        const formatado = temp.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+
+        setTelefone(formatado);
+    };
+
     return (
         <div>
 
@@ -82,6 +90,7 @@ function AnexaCurriculo() {
                             required
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
+                            onBlur={formataTelefone}
                         />
 
                         <br />
