@@ -122,4 +122,4 @@ function AnexaCurriculo() {
 
 }
 
-export default AnexaCurriculo;
+export default AnexaCurriculo; 
