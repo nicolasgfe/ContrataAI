@@ -23,6 +23,13 @@ fieldset {
     padding: 0;
 } 
 
+#dica {
+    font-family: sans-serif;
+    color: black;
+    font-size: 11px;
+    margin-top: -9px;
+} 
+
 form {
     display: flex;
     justify-content: center;
@@ -147,24 +154,4 @@ body{
     font-weight: bold;
     margin: 0;
     padding: 0;
-}
-
-input[type="submit"] {
-    padding: 10px 30px;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-    background-color: purple;
-    border: 1px solid purple;
-    border-radius: 50px;
-    cursor: pointer;
-    color: white;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-    transition: 0.5s;
-}
-
-input[type="submit"]:hover {
-    background-color: white;
-    color: #800080;
 }

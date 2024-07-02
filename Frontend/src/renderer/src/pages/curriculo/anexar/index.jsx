@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './index.css';
+import { Button, ConfigProvider, message } from 'antd';
+import { CheckOutlined } from '@ant-design/icons';
 
 const URL = "https://contrataai.onrender.com";
 
@@ -10,6 +12,8 @@ function AnexaCurriculo() {
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
     const [file, setArquivo] = useState(null);
+
+    const [enviando, setEnviando] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -21,21 +25,54 @@ function AnexaCurriculo() {
         formData.append('telefone', telefone);
         formData.append('file', file);
 
+        setEnviando(true);
 
-        await fetch( URL + "/api/curriculos/anexo", {
-            method: "POST",
-            body: formData
-        })
+        function fetchWithTimeout(url, timeout) {
+            const controller = new AbortController();
+            const signal = controller.signal;
 
-        navigate('/curriculo/concluido');
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+            return fetch(url, { 
+                signal,
+                method: "POST",
+                body: formData 
+            })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) {
+                        throw new Error('Erro HTTP, status ' + response.status);
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    if (error.name === 'AbortError') {
+                        throw new Error('Timeout');
+                    } else {
+                        throw error;
+                    }
+                });
+        }
+
+        await fetchWithTimeout(URL + "/api/curriculos/anexo", 7000)
+            .then(data => navigate('/curriculo/concluido'))
+            .catch(error => {
+                message.error("CA-01 - Falha ao enviar currículo. Por favor tente novamente mais tarde.", [10]);
+            })
+            .finally(() => {
+                setEnviando(false);
+            });
     }
 
     const formataTelefone = () => {
         const temp = telefone;
 
-        const formatado = temp.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-
-        setTelefone(formatado);
+        if (temp.length != 11) {
+            message.warning("Número inserido é inválido!");
+        } else {
+            const formatado = temp.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            setTelefone(formatado);
+        }
     };
 
     return (
@@ -104,15 +141,39 @@ function AnexaCurriculo() {
                             required
                             onChange={(e) => setArquivo(e.target.files[0])}
                         />
+                        <br />
+                        <p id='dica'>Somente arquivo .PDF</p>
                     </div>
 
-                    <div className='submit'>
-                        <input type='submit' value="Cadastrar"></input>
-                    </div><br /><br /><br /><br /><br />
+                    <ConfigProvider
+                        theme={{
+                            components: {
+                                Button: {
+                                    defaultBg: "#800080",
+                                    defaultColor: "#ffffff",
+                                    defaultHoverBg: "#800080",
+                                    defaultHoverBorderColor: "#800080",
+                                    defaultHoverColor: "#ffffff",
+                                    fontWeight: 600
+                                },
+                            },
+                        }}
+                    >
 
-                    <script>
+                        <Button
+                            htmlType='submit'
+                            type="default"
+                            size="large"
+                            icon={<CheckOutlined />}
+                            style={{ width: '150px' }}
+                            loading={enviando}
+                        >
+                            Cadastrar
+                        </Button>
 
-                    </script>
+                    </ConfigProvider>
+                    <br /><br /><br /><br /><br />
+
                 </fieldset>
             </form>
 
@@ -122,4 +183,4 @@ function AnexaCurriculo() {
 
 }
 
-export default AnexaCurriculo; 
+export default AnexaCurriculo;

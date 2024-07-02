@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, ConfigProvider, Tooltip, message } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { CheckOutlined, SearchOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import './index.css';
 
@@ -23,6 +23,7 @@ function CriaCurriculo() {
     const [descricaoPessoal, setDescricaoPessoal] = useState('');
     const [descricaoProfissional, setDescricaoProfissional] = useState('');
 
+    const [enviando, setEnviando] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -43,16 +44,47 @@ function CriaCurriculo() {
             descricaoProfissional
         }
 
-        await fetch(URL + "/api/curriculos/", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: {
-                "Content-Type": "application/json"
-            },
-            mode: "cors"
-        })
+        setEnviando(true);
 
-        navigate('/curriculo/concluido');
+        function fetchWithTimeout(url, timeout) {
+            const controller = new AbortController();
+            const signal = controller.signal;
+
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+            return fetch(url, { 
+                signal,
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                mode: "cors" 
+            })
+                .then(response => {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) {
+                        throw new Error('Erro HTTP, status ' + response.status);
+                    }
+                    return response.json();
+                })
+                .catch(error => {
+                    if (error.name === 'AbortError') {
+                        throw new Error('Timeout');
+                    } else {
+                        throw error;
+                    }
+                });
+        }
+
+        await fetchWithTimeout(URL + "/api/curriculos/", 7000)
+            .then(data => navigate('/curriculo/concluido'))
+            .catch(error => {
+                message.error("CA-01 - Falha ao enviar currículo. Por favor tente novamente mais tarde.", [10]);
+            })
+            .finally(() => {
+                setEnviando(false);
+            });
     }
 
     const buscaCep = async () => {
@@ -77,14 +109,15 @@ function CriaCurriculo() {
     };
 
     const formataTelefone = () => {
-        // Remove todos os caracteres não numéricos do telefone
         const temp = telefone;
-    
-        // Aplica a formatação desejada, por exemplo (XX) XXXX-XXXX
-        const formatado = temp.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-        
-        setTelefone(formatado);
-      };
+
+        if (temp.length != 11) {
+            message.warning("Número inserido é inválido!");
+        } else {
+            const formatado = temp.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            setTelefone(formatado);
+        }
+    };
 
     return (
 
@@ -174,17 +207,18 @@ function CriaCurriculo() {
                                         defaultBg: "#800080",
                                         defaultColor: "#ffffff",
                                         defaultHoverBorderColor: "#800080",
-                                        defaultHoverColor: "#800000"
+                                        defaultHoverColor: "#800080",
+                                        fontWeight: 600
                                     },
                                 },
                             }}
                         >
-                            <Tooltip title="Buscar CEP">
-                                <Button 
-                                    type="default" 
-                                    shape="circle" 
-                                    autoInsertSpace="false" 
-                                    icon={<SearchOutlined />} 
+                            <Tooltip title="Buscar CEP" color="#800080">
+                                <Button
+                                    type="default"
+                                    shape="circle"
+                                    autoInsertSpace="false"
+                                    icon={<SearchOutlined />}
                                     onClick={buscaCep}
                                 />
                             </Tooltip>
@@ -198,10 +232,8 @@ function CriaCurriculo() {
                             type='text'
                             id='cidade'
                             name='cidade'
-                            placeholder='Digite sua cidade'
                             required
                             value={cidade}
-                            onChange={(e) => setCidade(e.target.value)}
                         />
                         <input
                             type='text'
@@ -209,8 +241,9 @@ function CriaCurriculo() {
                             name='uf'
                             required
                             value={uf}
-                            onChange={(e) => setUf(e.target.value)}
                         />
+                        <br />
+                        <p id='dica'>Buscar CEP para preencher os campos Cidade e UF</p>
                         <br />
                         <label htmlFor='estadoCivil'>Estado Civil</label>
                         <br />
@@ -312,9 +345,34 @@ function CriaCurriculo() {
                         />
                     </div>
 
-                    <div className='submit'>
-                        <input type='submit' value="Cadastrar"></input>
-                    </div><br /><br /><br /><br /><br />
+                    <ConfigProvider
+                        theme={{
+                            components: {
+                                Button: {
+                                    defaultBg: "#800080",
+                                    defaultColor: "#ffffff",
+                                    defaultHoverBg: "#800080",
+                                    defaultHoverBorderColor: "#800080",
+                                    defaultHoverColor: "#ffffff",
+                                    fontWeight: 600
+                                },
+                            },
+                        }}
+                    >
+
+                        <Button
+                            htmlType='submit'
+                            type="default"
+                            size="large"
+                            icon={<CheckOutlined />}
+                            style={{ width: '150px' }}
+                            loading={enviando}
+                        >
+                            Cadastrar
+                        </Button>
+
+                    </ConfigProvider>
+                    <br /><br /><br /><br /><br />
 
                 </fieldset>
 
