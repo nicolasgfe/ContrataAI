@@ -3,43 +3,61 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+// function createWindow() {
+//   // Create the browser window.
+//   const mainWindow = new BrowserWindow({
+//     width: 900,
+//     height: 670,
+//     //show: false,
+//     //autoHideMenuBar: true,
+//     icon: icon,
+//     webPreferences: {
+//       preload: join(__dirname, '../preload/index.js'),
+//       sandbox: false,
+//       nodeIntegration: false, // is default value after Electron v5
+//       contextIsolation: true, // protect against prototype pollution
+//       enableRemoteModule: true // turn off remote
+//     }
+//   })
+
+//   mainWindow.on('ready-to-show', () => {
+//     mainWindow.show()
+//   })
+
+//   mainWindow.webContents.setWindowOpenHandler((details) => {
+//     shell.openExternal(details.url)
+//     return { action: 'deny' }
+//   })
+
+//   // HMR for renderer base on electron-vite cli.
+//   // Load the remote URL for development or the local html file for production.
+//   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
+//     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+//   } else {
+//     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+//   }
+
+//   Menu.setApplicationMenu(null)
+//   // mainWindow.openDevTools()
+// }
 function createWindow() {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
-    //show: false,
-    //autoHideMenuBar: true,
-    icon: icon,
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
-      sandbox: false,
-      nodeIntegration: false, // is default value after Electron v5
-      contextIsolation: true, // protect against prototype pollution
-      enableRemoteModule: true // turn off remote
-    }
-  })
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
+    },
+  });
 
-  mainWindow.on('ready-to-show', () => {
-    mainWindow.show()
-  })
-
-  mainWindow.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url)
-    return { action: 'deny' }
-  })
-
-  // HMR for renderer base on electron-vite cli.
-  // Load the remote URL for development or the local html file for production.
-  if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
-    mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+  if (isDev) {
+    win.loadURL('http://localhost:5173');
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+    win.loadFile(path.join(__dirname, 'build', 'index.html'));
   }
-
-  Menu.setApplicationMenu(null)
-  // mainWindow.openDevTools()
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

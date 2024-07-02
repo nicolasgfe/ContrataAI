@@ -1,11 +1,11 @@
 import Header from '../src/components/header/header';
 import AppRoutes from "../src/routes";
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
-      <AppRoutes />
+    <AppRoutes />
     </>
   );
 }

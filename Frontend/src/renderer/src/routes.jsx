@@ -8,15 +8,15 @@ import Concluido from "./pages/concluido/index";
 import AreadoCliente from "./pages/cliente/index";
 
 const AppRoutes = () => (
-        <HashRouter>
-            <Routes>
-                <Route path="/" element={<HomePage />} ></Route>
-                <Route path="/curriculo/cadastro" element={<CriaCurriculo />}> </Route>
-                <Route path="/curriculo/anexo" element={<AnexaCurriculo />}> </Route>
-                <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
-                <Route path="/cliente" element={<AreadoCliente />}> </Route>
-            </Routes>
-        </HashRouter> 
+    <HashRouter>
+        <Routes>
+            <Route path="/" element={<HomePage />} ></Route>
+            <Route path="/curriculo/cadastro" element={<CriaCurriculo />}> </Route>
+            <Route path="/curriculo/anexo" element={<AnexaCurriculo />}> </Route>
+            <Route path="/curriculo/concluido" element={<Concluido />}> </Route>
+            <Route path="/cliente" element={<AreadoCliente />}> </Route>
+        </Routes>
+    </HashRouter> 
 )
 
 export default AppRoutes;
