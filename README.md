@@ -8,25 +8,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ### 🔧 Instalação
 
-Após realizar o clone do reposótorio abra o terminal e entre na pasta Backend:
-
-```
-cd Backend
-```
-
-E instale as dependências:
-
-```
-npm install
-```
-
-Em seguida inicialize as tarefas:
-
-```
-npm run dev
-```
-
-Em um novo terminal repetimos o processo para a pasta Frontend:
+Após realizar o clone do repositório abra o terminal e entre na pasta Frontend:
 
 ```
 cd Frontend
@@ -64,6 +46,7 @@ $ npm run build:linux
 * [Sequelize + PostgreSQL](https://sequelize.org/) - Banco de dados
 * [Multer](https://www.npmjs.com/package/multer) - Upload de arquivos
 * [Electron-builder](https://www.electron.build/index.html) - Build
+* [Ant Design](https://ant.design/) - Componentes gráficos
 
 ## ✒️ Autores
 
