@@ -5,9 +5,10 @@ import '../cliente/index.css';
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://contrataai.onrender.com/api",
+  baseURL: "http://localhost:5173/api",
   withCredentials: true,
 });
+
 
 
 const AreadoCliente = () => {
