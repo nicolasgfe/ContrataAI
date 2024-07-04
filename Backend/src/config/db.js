@@ -1,14 +1,13 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('contrataai', 'contrataai', 'D4AsqceBWOUZQi3iFfXEnZAXwv6DKjf7', {
-  host: 'dpg-cph4mj821fec73ea4090-a', //Host URL interna Render
-  // host: 'dpg-cph4mj821fec73ea4090-a.oregon-postgres.render.com',   //Host URL externa
+const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
+  host: 'localhost', //Host URL interna Render
   dialect: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true, // Requer SSL
-      rejectUnauthorized: false // Ignora erros de certificado autoassinado (use com cautela em produção)
-    }
-  }
+//  dialectOptions: {
+//    ssl: {
+//      require: true, // Requer SSL
+//      rejectUnauthorized: false // Ignora erros de certificado autoassinado (use com cautela em produção)
+//    }
+//  }
 });
 
 // Testa a conexão

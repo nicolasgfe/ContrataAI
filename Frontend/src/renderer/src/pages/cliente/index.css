@@ -1,0 +1,54 @@
+#titulo {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #500b61;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#subtitulo {
+    font-family: sans-serif;
+    color: #380B61;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+body{
+    background-color: #F0F8FF;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+}
+
+.voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela {
+    display: flex; /* Usando flexbox para layout flexível */
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha conforme necessário */
+    justify-content: flex-start; /* Alinha os elementos à esquerda */
+    border: 1px solid #ccc; /* Borda da janela */
+    padding: 5px; /* Espaçamento interno da janela */
+  }
+  
+.conjunto-dados {
+    flex: 0 0 calc(60% - 10px); /* Cada conjunto de dados ocupará metade da largura da janela com margens */
+    margin: 5px; /* Margem entre os conjuntos de dados */
+    padding: px; /* Espaçamento interno dos conjuntos de dados */
+    box-sizing: border-box; /* Garante que a largura inclua padding e borda */
+}
